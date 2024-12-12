@@ -1,0 +1,46 @@
+<!-- fraud-detection.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice Fraud Detection System</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.4.0/mammoth.browser.min.js"></script>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="home-btn">Home</a>
+    </nav>
+    
+    <div class="container">
+        <h1>Invoice Fraud Detection System</h1>
+        
+        <div class="upload-section">
+            <input type="file" id="fileInput" multiple accept=".pdf,.xls,.xlsx,.doc,.docx" />
+            <button onclick="processFiles()">Analyze Invoices</button>
+        </div>
+
+        <div class="results-section">
+            <div class="charts">
+                <canvas id="fraudTypeChart"></canvas>
+                <canvas id="riskLevelChart"></canvas>
+            </div>
+            
+            <div class="detection-results">
+                <h2>Detection Results</h2>
+                <div id="resultsList"></div>
+            </div>
+
+            <div class="export-buttons">
+                <button onclick="exportToExcel()">Export to Excel</button>
+                <button onclick="exportToWord()">Export to Word</button>
+            </div>
+        </div>
+    </div>
+    <script src="fraud-detection.js"></script>
+</body>
+</html>
